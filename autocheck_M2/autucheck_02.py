@@ -5,12 +5,13 @@ is_active = bool(is_active)
 is_admin = bool(is_admin)
 is_permission = bool(is_permission)
 
+access = True if is_admin or (is_active and is_permission) else False
 
-if is_admin:
-    access = True
-elif is_active and is_permission and not is_admin:
-    access = True
-else:
-    access = False
+# if is_admin:
+#     access = True
+# elif is_active and is_permission and not is_admin:
+#     access = True
+# else:
+#     access = False
 
 print(access)
