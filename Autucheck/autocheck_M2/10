@@ -1,0 +1,25 @@
+total = 0
+
+while True:
+    num =
+    num
+    input("Enter a number (or 'done' to finish): ")
+
+
+    if num == 'done':
+
+
+    break
+
+
+try:
+    num =
+
+float(num)
+total += num
+
+total += num
+
+
+except:
+
