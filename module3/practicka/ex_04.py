@@ -4,4 +4,4 @@ k=10
 
 for k in lst:
     k+=k
-    print(k)
+        print(k)
