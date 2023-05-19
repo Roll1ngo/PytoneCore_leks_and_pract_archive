@@ -1,10 +1,6 @@
 import turtle
 
 
-
-
-
-
 def fibonacci(n):
 
     if not n:
@@ -15,23 +11,28 @@ def fibonacci(n):
 
     return fibonacci(n-1) + fibonacci(n-2)
 
+
+
 def main():
     
-    turtle. setup(1000, 1000)
+    turtle. setup(1920, 1080)
+
     t =turtle.Turtle()
    
 
     for i in range(16):
-         f=fibonacci(i)
+        f = fibonacci(i)
         
-         for i in range(4):
+        for i in range(4):
             t.fd(f)
             t.lt(90)
-            t.circle(f, 90)
+        t.circle(f, 90)
 
 
     turtle.mainloop()
     
+if __name__ == "__main__":
+  main()
 
 
 
