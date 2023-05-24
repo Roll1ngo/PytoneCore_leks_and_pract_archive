@@ -1,28 +1,7 @@
-def format_ingredients(ingrids):
-   
-   result = ""
-   counter = 0
-   for i in ingrids:
-        
-        if counter == 0:
-           result = f"{ingrids[0]}"
-           
-        elif len(ingrids) - 1 == counter:
-           result += f" and {ingrids[counter]}"
-       
-             
-        elif len(ingrids) > counter:
-          result += f", {ingrids[counter]}"
+# grade ={"F":1, "FX":2, "E":3, "D":3, "C":4, "B":5, "A":5}
 
-        else:
-           break
-       
-        counter += 1
+# a= grade.keys("F")
+# print(a)
 
-
-   return result
-
-
-a = format_ingredients(["2 eggs", " 1 liter sugar", "1 tsp salt", "vinegar",])
-print(a)
-    
+a= (1,2,3,4,5,6,7)
+# print(9 not in a)
