@@ -3,17 +3,12 @@ def is_valid_pin_codes(pin_codes):
       
     
     for pin in set_pin:
-
-
-        if len(pin) == 4 and not len(pin)  ==0:
-            a= True
-        
-
+      
+       
+        a= True if len(pin) == 4 and not len(pin)  ==0 else False
+                 
         b = True if int(pin)/int(pin) ==1 else False
-        
-        
-
-        
+                       
         c = True if a and b else False
 
     
