@@ -1,65 +1,24 @@
 def is_valid_pin_codes(pin_codes):
-    set_pin =set(pin_codes)
-      
-    
-    for pin in set_pin:
-      
-       
-        a= True if len(pin) == 4 and not len(pin)  ==0 else False
-                 
-        b = True if int(pin)/int(pin) ==1 else False
-                       
-        c = True if a and b else False
 
-    
-            
-    return f"is_valid_pin_codes ({pin_codes}) == {c}"
+    if len(pin_codes)<1:
 
+        return False
 
- 
+    if len(set(pin_codes)) != len(pin_codes):
 
-   
+        return False
 
+    for pin in pin_codes:
 
-print(is_valid_pin_codes(["1101", "9034", "0011", ]))     
+           if len(pin) != 4:
+
+               return False
+
+           for pin_2 in (pin):
+                if  not 48 <= ord(pin_2)<=57 : 
+                    return False
+
+    return True
 
 
-    
-
-  
-        
-
-             
-    # print(pin)
-           
-    # pin = int(pin)
-    # True if pin/1==pin else False
-    # if True:
-    #     set_pin.add(pin)
-            
-        #  a=  True if len(pin) == 4 else False
-        #  print(a)
-
-
-        # pin = int(pin)
-        # b = True if pin/1 == pin else False
-
-
-
-     
-
-    
-        
-
-    
-
-
-        
-       
-          
-
-
-
-
-
-
+print(is_valid_pin_codes(['1104', '1904', '0011']))

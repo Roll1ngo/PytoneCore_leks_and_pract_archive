@@ -1,27 +1,28 @@
-points = {(0, 1): 2, (0, 2): 3.8, (0, 3): 2.7,
-          (1, 2): 2.5, (1, 3): 4.1, (2, 3): 3.9}
+def is_valid_pin_codes(pin_codes):
+    
+    if not pin_codes:
+
+        return False
 
 
-def calculate_distance(coordinates):
-    total_distance = 0
-    # c = 0
-    # not_distance_coordinats = []
-    for index, coord in enumerate(coordinates[:-1]):
-        x = coord
-        y = coordinates[index + 1]
-        # x = i
-        # try:
-        #    y= coordinates[c+1]
-
-        # except IndexError:
-        #     continue
-        # c += 1
-        a = (x, y) if x < y else (y, x)
-        
-
-        total_distance += points.get(a, 0)
-
-    return total_distance
+    if len(set(pin_codes)) != len(pin_codes):
+       
+        return False
 
 
-print(calculate_distance([0, 1, 3, 2, 0, 2, 8, 9]))
+    for pin in pin_codes:
+    
+            if len(pin) != 4:
+
+
+               return False
+
+
+            for i_2 in (pin):
+                if  not 48 <=ord(i_2)<=57 and len(pin)>1: 
+                     return False
+              
+    return True
+
+
+print(is_valid_pin_codes(['1102', '1904', '0011']))
