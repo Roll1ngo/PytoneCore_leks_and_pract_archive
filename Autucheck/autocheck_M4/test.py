@@ -1,28 +1,13 @@
-def is_valid_pin_codes(pin_codes):
-    
-    if not pin_codes:
+from random import randint
+chr_list= []
+sim_list = []
 
-        return False
+while len(chr_list)<8:
+    rand = randint(40,126)
+    chr_list.append(rand)
 
-
-    if len(set(pin_codes)) != len(pin_codes):
-       
-        return False
-
-
-    for pin in pin_codes:
-    
-            if len(pin) != 4:
-
-
-               return False
-
-
-            for i_2 in (pin):
-                if  not 48 <=ord(i_2)<=57 and len(pin)>1: 
-                     return False
-              
-    return True
-
-
-print(is_valid_pin_codes(['1102', '1904', '0011']))
+for  d in chr_list:
+    a = chr(d)
+    sim_list.append(a)
+    new_pass = "".join(sim_list)
+print(new_pass)
