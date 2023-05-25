@@ -21,4 +21,5 @@ def is_valid_pin_codes(pin_codes):
     return True
 
 
-print(is_valid_pin_codes(['1104', '1904', '0011']))
+
+print(is_valid_pin_codes(['1104', '1294', '0011']))
