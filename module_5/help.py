@@ -1,0 +1,2 @@
+import re
+help(re)
