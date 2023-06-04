@@ -17,7 +17,7 @@ def is_spam_words(text, spam_words, space_around=False):
 
             for word in split_text:
 
-                if word == spam_word:
+                if word in spam_word:
                     return True
 
     return False

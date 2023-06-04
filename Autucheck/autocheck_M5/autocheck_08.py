@@ -1,13 +1,22 @@
-grades = {"F": 1, "FX": 2, "E": 3, "D": 3, "C": 4, "B": 5, "A": 5}
+grades = {"F": 1,
+          "FX": 2,
+          "E": 3,
+          "D": 3,
+          "C": 4,
+          "B": 5,
+          "A": 5}
 
 
-def digit_ball(value):
-    
-        key_list = []
+def formatted_grades(students):
+    result = []
+    i = 1
 
-        for k, val in dict.items():
+    for name, ball in students.items():
+        f = "{:>4}|{:<10}|{:^5}|{:^5}".format(
+            i, name, ball, grades.get(ball))
+        result.append(f)
+        i += 1
+    return result
 
-            if val == value:
-                key_list.append(k)
 
-        return key_list
+print(formatted_grades({"Nick": "A", "Olga": "B", "Mike": "FX", "Anna": "C"}))
