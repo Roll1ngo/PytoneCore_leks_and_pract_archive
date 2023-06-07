@@ -30,14 +30,11 @@ os.makedirs(f"{main_path}\Music", exist_ok=True)
 os.makedirs(f"{main_path}\Other", exist_ok=True)
 
 def translate (name):
+
+
     trans_name = name.translate(TRANS)
 
     return trans_name
-
-
-
-
-
 
 
 def get_pass_and_name(path):
@@ -56,24 +53,16 @@ def get_pass_and_name(path):
     return pass_key
 
 
+def remove_empty_folders(main_path) -> None:
+    for folders in os.listdir(main_path):
+        fold = os.path.join(main_path, folders)
+        if os.path.isdir(fold):
+            remove_empty_folders(fold)
+            if not os.listdir(fold):
+                os.rmdir(fold)
 
-# def remove_folder_end_archives(path):
 
 
-    
-
-#     for obj in path_name_dict.iterdir():
-      
-#         try:
-#             if obj.is_dir():
-#                os.rmdir(f"{obj}")
-           
-                
-#         except OSError:
-#            remove_folder_end_archives(obj)
-           
-
-#         return 
 
 
 def main (main_path):
@@ -100,11 +89,12 @@ def main (main_path):
             trans_name = translate(name)
             format_suff =path.suffix.removeprefix(".")
             shutil.unpack_archive(fr"{path}", fr"{main_path}\Archives",format=f"{format_suff}")
+            os.remove(f"{path}")
         else:
             trans_name = translate(name)
             os.replace(fr"{path}", fr"{main_path}\Other\{name}")
     
-    # remove_folder_end_archives(p)
+    remove_empty_folders(main_path)
     return 
 main(main_path)
 
