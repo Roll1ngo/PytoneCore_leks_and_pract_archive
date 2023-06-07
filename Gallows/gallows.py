@@ -1,4 +1,5 @@
 import re
+from random import randint
 words = ["banana", "borsch", "milk", "apple","pine","salo","sushi"]
 
 
@@ -68,9 +69,12 @@ def main():
      
      print(draw_gallows())
      step = 0
-     word = "hello"
-        
-     answer_word = ["_" for _ in range(len(word))]
+     word = words[randint(0,(len(words)-1))]
+             
+     answer_word = []
+
+     for _ in range(len(word)):
+        answer_word.append("_")
      
 
      print((len(word) *" _ ").strip())
