@@ -141,6 +141,7 @@ def main (main_path):
     know_ex.close()
     # path_know_ex = os.path.join(os.getcwd(), "know_ex_and_file_name")
     # os.replace(path_know_ex, main_path)
+    #
     
         
     
