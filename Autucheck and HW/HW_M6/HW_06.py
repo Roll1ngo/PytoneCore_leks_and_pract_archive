@@ -134,20 +134,20 @@ def main (main_path):
     
     
     unknow_ex.close()
-    path_unknow_ex = os.path.join(os.getcwd(), "unknow_ext_and_file_name.txt")
-    os.replace(path_unknow_ex,main_path)
+    # path_unknow_ex = os.path.join(os.getcwd(), "unknow_ext_and_file_name.txt")
+    # os.replace(path_unknow_ex,main_path)
     
     
     know_ex.close()
-    path_know_ex = os.path.join(os.getcwd(), "know_ex_and_file_name")
-    os.replace(path_know_ex, main_path)
+    # path_know_ex = os.path.join(os.getcwd(), "know_ex_and_file_name")
+    # os.replace(path_know_ex, main_path)
     
         
     
    
     return 
 
-print(main(main_path))
+main(main_path)
 
 
 
