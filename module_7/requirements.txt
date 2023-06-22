@@ -1,0 +1,17 @@
+autopep8==2.0.2
+beautifulsoup4==4.12.2
+build==0.10.0
+colorama==0.4.6
+Faker==18.10.1
+HW07-from-Vladislav-B @ file:///C:/Project%20for%20package/dist/HW07_from_Vladislav_B-0.0.0-py3-none-any.whl
+markdown-it-py==3.0.0
+mdurl==0.1.2
+packaging==23.1
+pycodestyle==2.10.0
+pygame==2.4.0
+Pygments==2.15.1
+pyproject_hooks==1.0.0
+python-dateutil==2.8.2
+rich==13.4.2
+six==1.16.0
+soupsieve==2.4.1

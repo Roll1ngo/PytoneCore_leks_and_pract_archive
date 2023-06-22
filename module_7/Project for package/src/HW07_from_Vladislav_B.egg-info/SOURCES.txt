@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/HW07_from_Vladislav_B/clean.py
+src/HW07_from_Vladislav_B/init_.py
+src/HW07_from_Vladislav_B.egg-info/PKG-INFO
+src/HW07_from_Vladislav_B.egg-info/SOURCES.txt
+src/HW07_from_Vladislav_B.egg-info/dependency_links.txt
+src/HW07_from_Vladislav_B.egg-info/top_level.txt
