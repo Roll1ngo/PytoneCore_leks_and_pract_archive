@@ -3,7 +3,7 @@ from collections import defaultdict
 
 employes = [{"name": "Peter", "birthday": datetime(1990)},
             {"name": "Angel", "birthdate": "24.06.2000"},
-            {"name"}:"Angel", "birthdate": datetime(1985,6,25)]
+            {"name":"Angel", "birthdate": datetime(1985,6,25)}]
 
 def get_period() -> tuple(datetime.date,datetime.date):
     current_date = datetime.now()
@@ -16,7 +16,7 @@ def get_period() -> tuple(datetime.date,datetime.date):
 
 def check_epl(list_of_emp:list)-> None:
 
-
+    result = {}
    
     current_year = datetime.now().year
 
