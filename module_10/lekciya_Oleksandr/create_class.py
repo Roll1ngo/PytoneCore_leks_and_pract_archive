@@ -1,3 +1,5 @@
+
+
 class Character:
     count = 0
     hp = 100
@@ -47,7 +49,7 @@ char_3 = Character(name="Vadim", nik="Santa")
 sword_1 = Weapon()
 char_3.pick_weapon(sword_1)
 left_hand, right_hand = char_3.show_weapon()
-print(right_hand.type,right_hand.damage)
+
 
 
 
