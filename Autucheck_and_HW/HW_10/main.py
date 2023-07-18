@@ -5,6 +5,8 @@ import pickle
 
 
 adress_book = AddressBook()
+with open("phone_book.bin", "rb") as file:
+    adress_book.data = pickle.load(file)
 
 
 fake = Faker("uk-UA")
@@ -58,6 +60,7 @@ def log_decorator(func):
     return inner
 
 
+@log_decorator
 def del_contact(user_input: str) -> str:
     name = Name(user_input[1])
     rec: Record = adress_book.get(name.value)
@@ -82,6 +85,7 @@ def show_all(user_input: str) -> dict:
     return adress_book
 
 
+@log_decorator
 def add_name_and_phone_number(user_input: str) -> dict:
     name = Name(user_input[1])
     phone = Phone(user_input[2])
@@ -93,6 +97,7 @@ def add_name_and_phone_number(user_input: str) -> dict:
     return adress_book.add_record(rec)
 
 
+@log_decorator
 def change(user_input: str) -> dict:
     name = Name(user_input[1])
     old_phone = Phone(user_input[2])
@@ -103,6 +108,7 @@ def change(user_input: str) -> dict:
     return f"No contact {name} in address book"
 
 
+@log_decorator
 def del_phone(user_input: str) -> str:
     name = Name(user_input[1])
     phone = Phone(user_input[2])
