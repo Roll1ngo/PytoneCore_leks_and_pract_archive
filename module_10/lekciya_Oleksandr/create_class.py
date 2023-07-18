@@ -6,7 +6,7 @@ class Character:
     mp = 100
     
     def __init__(self, name,nik):
-        self.left_hand = None
+        self.left_hand = Weapon()
         self.right_hand = None
         Character.count+= 1
         self.name = name
@@ -35,20 +35,35 @@ class Character:
         print(f"My nik is {self.nik}")
 
     def die(self):
-        self.dead = True
+        return self.left_hand, self.right_hand
 
 class Weapon:
     def __init__(self):
-        self.type = "sword"
-        self.damage  = 10
+        self .damage = 10
 
-char_3 = Character(name="Vadim", nik="Santa")
+    def damage(self):
+        return self.damage
 
-#open chest
+char_1 = Character(name="Vadim", nik="Santa")
+print(char_1.__dict__)
 
-sword_1 = Weapon()
-char_3.pick_weapon(sword_1)
-left_hand, right_hand = char_3.show_weapon()
+char_2 = Character("char_2", "Roll")
+
+sword = Weapon()
+
+char_1.pick_weapon(sword)
+
+left_hand, right_hand =  char_1.die()
+
+char_2.pick_weapon(left_hand)
+
+
+
+
+
+
+
+
 
 
 
