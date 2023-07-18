@@ -5,8 +5,6 @@ import pickle
 
 
 adress_book = AddressBook()
-with open("phone_book.bin", "rb") as file:
-    adress_book.data = pickle.load(file)
 
 
 fake = Faker("uk-UA")
@@ -23,7 +21,7 @@ def faker_dict() -> dict:
 
 
 def show_help(user_input):
-    return f'"hello"ex=hello (show welcome)\n"add"  example: add name phone_number(add name and phone number)\n"change" example: change name new_numder(change phone number)\n"phone" example:phone name (show phone number)\n"show_all" example: show_all(show all phone book)\n"del"  example: del name(del name and phone number)\n"good bye", "quit", "exit", "bye", "close"(close app)\n"help" example: help (show commands list)'
+    return f'"hello"ex=hello (show welcome)\n"load"(load phone_book into the file)\n"clear"(clear all contacts into the phone book)\n"add"  example: add name phone_number(add name and phone number)\n"change" example: change name new_numder(change phone number)\n"phone" example:phone name (show phone number)\n"show_all" example: show_all(show all phone book)\n"del"  example: del phone(del phone number into contact)\n"del_contact name", "remove_contact name"(remove contact into the phone_book)\n"good bye", "quit", "exit", "bye", "close"(close app)\n"help" example: help (show commands list)'
 
 
 def decor_input_error(func):
@@ -67,6 +65,14 @@ def del_contact(user_input: str) -> str:
     if rec:
         return adress_book.del_record(rec)
     return f"No contact {name} in address book"
+
+
+def load_phone_book(user_input):
+    return adress_book.load_phone_book()
+
+
+def clear_phone_book(user_input):
+    return adress_book.clear_phone_book()
 
 
 def exit(user_input: str) -> None:
@@ -149,6 +155,8 @@ COMMANDS = {
     ("del_contact", "remove_contact"): del_contact,
     ("del"): del_phone,
     ("help",): show_help,
+    ("load"): load_phone_book,
+    ("clear"): clear_phone_book,
 }
 
 

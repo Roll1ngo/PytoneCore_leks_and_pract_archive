@@ -1,5 +1,5 @@
 from collections import UserDict
-import json
+import pickle
 
 
 class Field:
@@ -47,7 +47,7 @@ class Record:
             if p.value == phone.value:
                 self.phones.remove(p)
 
-                return f"number{phone} has been deleted in contact {self.name}"
+                return f"number {phone} has been deleted in contact {self.name}"
 
         return f"{phone} not present in phones of contact {self.name}"
 
@@ -56,6 +56,15 @@ class Record:
 
 
 class AddressBook(UserDict):
+    def load_phone_book(self):
+        with open("phone_book.bin", "rb") as file:
+            self.data = pickle.load(file)
+        return f"Phone book has been loaded"
+
+    def clear_phone_book(self):
+        self.clear()
+        return "Phone book is clear now"
+
     def add_record(self, record: Record):
         self.data[str(record.name)] = record
         return f"Contact {record} add success"
